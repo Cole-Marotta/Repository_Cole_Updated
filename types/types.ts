@@ -25,10 +25,6 @@ export interface Resource {
 }
 export type Resources = Resource[];
 
-// export interface Toc {
-//   title: string;
-//   url?: string;
-// }
 
 export interface Content {
   title?: string;
@@ -39,6 +35,7 @@ export interface Content {
 
 export type Toc = Content[];
 
+
 export interface Lecture {
   title: string;
   id: string;
@@ -48,6 +45,7 @@ export interface Lecture {
   slides?: string[];
   date: Dayjs;
   toc: Toc;
+
 }
 export type Lectures = Lecture[];
 
@@ -60,3 +58,5 @@ export interface Student {
 }
 
 export type Students = Student[];
+
+export type Mode = "light" | "dark";

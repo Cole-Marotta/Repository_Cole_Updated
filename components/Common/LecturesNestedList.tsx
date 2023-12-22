@@ -21,7 +21,7 @@ interface Props {
 
 type OpenArray = boolean[];
 
-export default function LencutesNestedList({ list }: Props) {
+export default function LecturesNestedList({ list }: Props) {
   const [open, setOpen] = useState<OpenArray>([]);
 
   const handleClick = (index: number) => {
@@ -35,6 +35,7 @@ export default function LencutesNestedList({ list }: Props) {
       sx={{
         width: "60%",
         minWidth: 800,
+        minHeight: 200,
         bgcolor: "background.paper",
         maxHeight: 500,
         overflowY: "auto",
@@ -55,14 +56,11 @@ export default function LencutesNestedList({ list }: Props) {
           >
             <ListItemText
               primary={`${item.title}${
-                item.date ? `(${item.date.format("YYYY/MM/DD")})` : ""
+                item.date ? ` (${item.date.format("YYYY/MM/DD")})` : ""
               }`}
             />
             <Link
-              hidden={
-                item.date > dayjs("2023/09/07") &&
-                item.date > dayjs().add(1, "week")
-              }
+              hidden={item.date >= dayjs()}
               href={item.url ? item.url : item.id}
               title={item.title}
             >
