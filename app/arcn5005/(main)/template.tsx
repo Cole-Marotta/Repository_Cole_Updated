@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+
 import { SlidesFooter } from "../../../components/Footer";
 import { HeaderOfSlide } from "../../../components/Header";
 import { slides } from "../../MainMenu";
@@ -20,17 +20,7 @@ export default function NestedTemplate({
         }`}
       >
         <HeaderOfSlide slides={slides} />
-      </header>
-      <section className="top-24 flex justify-center items-center grow ">
-        {children}
-      </section>
-      <footer
-        className={`bottom-0 static w-full flex h-16 items-center z-50 ${
-          mode === "light" ? "bg-light" : "bg-dark "
-        }`}
-      >
-        <SlidesFooter slides={slides} />
-      </footer>
+
     </main>
   );
 }
